@@ -1,68 +1,119 @@
+/* Variables globales */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    --color-bg: #152938;
+    --color-text: #fcfcfc;
+    --color-card-bg: #fcfcfc;
+    --color-title: rgb(113, 145, 165);
+    --color-option-bg: rgb(188, 206, 217);
+    --color-option-hover: rgb(99, 149, 184);
+    --color-option-active: rgb(48, 72, 89);
+    --color-start: rgb(253, 162, 20);
+    --color-start-hover: rgb(255, 184, 74);
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    --font-size-base: 18px;
+    --font-family: sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    --border-radius-card: 16px;
+    --border-radius-option: 18px;
+    --border-radius-start: 20px;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+    --transition-duration: 0.3s;
+    --transition-timing: ease;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* Reset global */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Base styles */
+body,
+#root {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    height: 100vh;
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    font-weight: bold;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Layout */
+.page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.gameName {
+    margin-bottom: 50px;
+}
+
+/* Card */
+.card {
+    height: 375px;
+    width: 320px;
+    padding: 16px;
+    background-color: var(--color-card-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--border-radius-card);
+}
+
+/* Title */
+.title {
+    margin-bottom: 15px;
+    color: var(--color-title);
+}
+
+/* Options */
+.options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: var(--color-option-bg);
+    text-align: center;
+    border-radius: var(--border-radius-option);
+    height: 36px;
+    transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+.option:hover {
+    background-color: var(--color-option-hover);
+}
+
+.option.active,
+.option.active:hover {
+    background-color: var(--color-option-active);
+}
+
+/* Start button */
+.start {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-start);
+    text-align: center;
+    border-radius: var(--border-radius-start);
+    height: 40px;
+    transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+.start:hover {
+    background-color: var(--color-start-hover);
 }
