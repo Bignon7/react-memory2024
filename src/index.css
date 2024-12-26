@@ -1,68 +1,205 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: var(--secondary-background-color);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 1.3rem;
+
+
+
+  --main-color: #fda214;
+  --main-color-hover: #ffb84a;
+  --primary-color: #bcced9;
+  --primary-color-hover: #6395b8;
+  --secondary-color:#304859;
+
+  --main-text-color: white;
+  --primary-text-color: grey;
+  --secondary-text-color:#152938;
+
+  --primary-background-color:white;
+  --secondary-background-color:rgb(39, 40, 43);
+  --font-size:1.2em;
+
+
+  --color-dark-tangerine: #fda214;
+  --color-light-tangerine: #ffb84a;
+  --color-spindle: #bcced9;
+  --color-arapawa: #304859;
+  --color-tangaroa: #152938;
+  --color-white-smoke: #f2f2f2;
+  --color-bermuda-grey: #7191a5;
+  --color-shakespeare: #6395b8;
+  --color-pattens-blue: #dfe7ec;
+  --color-snow: #fcfcfc;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.white_background{
+  background-color: var(--primary-background-color);
+  color: var(--secondary-text-color);
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  color: var(--main-text-color);
+  font-size: var(--font-size);
   min-height: 100vh;
+  /* height: 100vh;           */
+  justify-content: center; 
+  align-items: center;    
+  display: flex;
+  margin: 0;  
+  
+
+
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.container{
+  color: var(--primary-text-color);
+  border-radius: 15px;
+  background-color: var(--primary-background-color);
+  padding: 30px;
+  width: 100%; 
+  max-width: 800px;
+  overflow: hidden;
+  box-sizing: border-box;
+  /* width: auto; 
+  max-width: 90%; */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+button{
+  flex: 1; padding: 10px 50px;
+  border-radius: 2em;
+  color: var(--main-text-color);
+  border: none;
+  font-weight: bolder;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: var(--font-size);
+  margin:0 8px;
+  cursor:pointer;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+
+.main-btn{
+  background-color: var(--main-color);
+}
+ .main-btn:hover {
+  background-color: var(--main-color-hover);
+}
+
+.primary-btn{
+  background-color: var(--primary-color);
+}
+
+.secondary-btn{
+  background-color: var(--secondary-color);
+}
+
+.selected-btn{
+  background-color: var(--secondary-color);
+}
+
+
+h2{
+  text-align: left;
+  color:var(--primary-text-color);
+  font-size: calc(var(--font-size) - 0.2em);
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  
+}
+
+.button-group button{
+  flex: 1 1 auto;              
+          
+  text-align: center;  
+  max-width: 100%;
+}
+
+.button-group .primary-btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.button-group .secondary-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.start-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.start-container button {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1em;
   }
-  a:hover {
-    color: #747bff;
+
+  .container {
+    padding: 20px;
   }
+
   button {
-    background-color: #f9f9f9;
+    padding: 10px 30px;
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: calc(var(--font-size) - 0.4em);
+  }
+
+  .button-group {
+    align-items: center;
+  }
+
+  .button-group button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .start-container button {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  h2 {
+    font-size: calc(var(--font-size) - 0.6em);
+  }
+
+  .button-group button {
+    font-size: 0.9em;
   }
 }
